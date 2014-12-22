@@ -96,10 +96,12 @@ end
 function mover:groups()
   local groups = {}
   for k,v in ipairs(self:allfiles()) do
-    if not groups[v.title] then
-      groups[v.title] = {}
+    local index = #groups
+    if index == 0 or groups[index].title ~= v.title then
+      table.insert(groups, {title=v.title, items={}})
+      index = #groups
     end
-    table.insert(groups[v.title], v)
+    table.insert(groups[index].items, v)
   end
   return groups
 end

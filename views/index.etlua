@@ -1,10 +1,10 @@
 hallo!
 
-<% for k,v in pairs(groups) do -%>
-<h1><%= k -%></h1>
+<% for i,group in ipairs(groups) do -%>
+<h1><%= group.title -%></h1>
   <table>
     <tr><th>name</th><th>seen</th><th>season</th><th>episode</th></tr>
-<% for i,item in ipairs(v) do -%>
+<% for j,item in ipairs(group.items) do -%>
 	  <tr><td><%= item.name -%></td><td><%= item.seen -%></td><td><%= item.season -%></td><td><%= item.episode -%></td>
 <% end -%>
   </table>
