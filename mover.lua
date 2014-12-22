@@ -95,14 +95,20 @@ end
 
 function mover:groups()
   local groups = {}
-  for k,v in ipairs(self:allfiles()) do
+  for i,v in ipairs(self:allfiles()) do
     local index = #groups
     if index == 0 or groups[index].title ~= v.title then
-      table.insert(groups, {title=v.title, items={}})
+      table.insert(groups, {title=v.title, items={}, seencount=0, seencountguess=0, movecount=0})
       index = #groups
     end
     table.insert(groups[index].items, v)
+    if v.seen then
+      groups[index].seencount = groups[index].seencount + 1
+      groups[index].seencountguess = #groups[index].items
+      groups[index].movecount = groups[index].seencountguess -1
+    end
   end
+  -- for 
   return groups
 end
 

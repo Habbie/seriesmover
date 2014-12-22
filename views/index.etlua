@@ -2,6 +2,7 @@ hallo!
 
 <% for i,group in ipairs(groups) do -%>
 <h1><%= group.title -%></h1>
+   <%= #group.items %> episodes, <%= group.seencount %> marked seen, guessing <%= group.seencountguess %> actually seen, suggest moving first <%= group.movecount %> episodes.
   <table>
     <tr><th>name</th><th>seen</th><th>season</th><th>episode</th></tr>
 <% for j,item in ipairs(group.items) do -%>
