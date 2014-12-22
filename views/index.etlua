@@ -1,0 +1,8 @@
+hallo!
+
+<ul>
+
+<% for k,v in pairs(allfiles) do %>
+  <li><%= v -%></li>
+<% end %>
+</ul>
