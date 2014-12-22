@@ -1,12 +1,5 @@
 hallo!
 
-<table>
-  <tr><th>name</th><th>seen</th><th>title</th><th>season</th><th>episode</th></tr>
-<% for k,v in ipairs(allfiles) do -%>
-  <tr><td><%= v.name -%></td><td><%= v.seen -%></td><td><%= v.title -%></td><td><%= v.season -%></td><td><%= v.episode -%></td>
-<% end -%>
-</table>
-
 <% for k,v in pairs(groups) do -%>
 <h1><%= k -%></h1>
   <table>

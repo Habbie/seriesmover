@@ -7,7 +7,6 @@ app:enable("etlua")
 
 app:get("/", function(self)
 	local mymover = mover:new(config.inpath, config.outpath)
-	self.allfiles = mymover:allfiles()
 	self.groups = mymover:groups()
 	return { render="index" }
 end)
